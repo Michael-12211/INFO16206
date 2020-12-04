@@ -46,6 +46,10 @@ function initApp(){
     var btnSubmitText = btnSubmit.textContent;
 
     //1. Cache tbody, h3 & h3 text selectors: See Ex 9.1
+    var tbody = document.querySelector(".pure-table").lastChild;
+    //tbody.textContent = "t"
+    var h3 = document.querySelector("h3");
+    //h3.textContent = "correct";
 
 
     var url = "http://babanski.com/files/ajax/book_signing_event.json";
