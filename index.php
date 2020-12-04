@@ -52,7 +52,7 @@ function initApp(){
     //h3.textContent = "correct";
 
 
-    var url = "http://babanski.com/files/ajax/book_signing_event.json";
+    var url = "https://babanski.com/files/ajax/book_signing_event.json";
 
     var data = null;
     var xhr = new XMLHttpRequest(); 
@@ -61,19 +61,22 @@ function initApp(){
     xhr.onreadystatechange = function (evt) { 
          //2. Create variable to store all the rows data for <tbody> & initialize it to an empty string. 
          var trows = ""
+         
+         //tbody.textContent = "called"
+         //btnSubmit.textContent = "yes"
 
         //If server connection established -> ready state = OPENED
         if (this.readyState == XMLHttpRequest.OPENED) {
             // Steps 3 to 5 - Refer to Ex 9.1 as an example
             //3. Change button text to "Please Wait!" 
-           btnSubmit.textContent = "Please Wait!"
+           btnSubmit.textContent = "Please Wait!";
             
             //4. Reset text to an empty string inside <tbody>
-           tbody.textContent = ""
+           tbody.textContent = "";
             
             
             //5. Reset header to default text
-            h3.textContent = "Book Signing Event"
+            h3.textContent = "Book Signing Event";
             
         } //If request finished & response ready -> ready state = DONE
         else if (this.readyState == XMLHttpRequest.DONE) {
@@ -87,6 +90,7 @@ function initApp(){
         
                     if (data.section.title) { //Check title exists
                         //6. Change h3 header text to title from JSON
+                        h3.textContent = "test"
                         
                     }
 
