@@ -60,12 +60,13 @@ function initApp(){
     // Create function triggered by each state change event 
     xhr.onreadystatechange = function (evt) { 
          //2. Create variable to store all the rows data for <tbody> & initialize it to an empty string. 
+         var trows = "";
 
         //If server connection established -> ready state = OPENED
         if (this.readyState == XMLHttpRequest.OPENED) {
             // Steps 3 to 5 - Refer to Ex 9.1 as an example
             //3. Change button text to "Please Wait!" 
-           
+           btnSubmit.textContent = "Please Wait!"
             
             //4. Reset text to an empty string inside <tbody> 
             
