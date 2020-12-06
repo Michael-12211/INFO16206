@@ -113,18 +113,19 @@ function initApp(){
                } // This ends the "if (data.section)".
                else {
                    //8. (else) If not able to parse data -> show "Error: Incorrect input received from the server!" error message.
-                   
+                   h3.textContent = "Error: Incorrect input received from the server!";
                }
             } // This ends the "if (this.status == 200)"
             //9. (else) If server returns 404 or 500 or 30X status code: means we didn't get the file. then display error message "Error: Cannot connect to the server!"
             // This is equivalent to both error & timeout events.
             else { 
-                
+                h3.textContent = "Error: Cannot connect to the server!";
             }
             //10. Display rows data to the table
             tbody.innerHTML = trows;
             
             //11. Change button text to concatenate "Re-" to the existing text to display "Re-Load Data". Similar to Ex 9.1
+            btnSubmit.textContent = "Re-Load Data";
             
         } // This ends the else if (this.readyState == XMLHttpRequest.DONE) 
     }; // This ends the onreadystatechange event handler
