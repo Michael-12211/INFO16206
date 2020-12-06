@@ -90,7 +90,7 @@ function initApp(){
         
                     if (data.section.title) { //Check title exists
                         //6. Change h3 header text to title from JSON
-                        h3.textContent = "test"
+                        h3.textContent = data.section.title;
                         
                     }
 
@@ -98,6 +98,11 @@ function initApp(){
                     //Note: Requires concatenating table HTML tags to the JSON data to create each row & cell.
                     // Slow loop: .forEach - do not use
                     // Fastest loop: for(...)
+                    for (var i = 0; i < data.section.signing.length; i++){
+                        //trows += data.section.signing[i].author;
+                    }
+                    //tbody.textContent = trows;
+                    
                     
                } // This ends the "if (data.section)".
                else {
