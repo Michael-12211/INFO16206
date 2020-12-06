@@ -46,7 +46,7 @@ function initApp(){
     var btnSubmitText = btnSubmit.textContent;
 
     //1. Cache tbody, h3 & h3 text selectors: See Ex 9.1
-    var tbody = document.querySelector(".pure-table").lastChild;
+    var tbody = document.querySelector(".pure-table").lastElementChild;
     //tbody.textContent = "t"
     var h3 = document.querySelector("h3");
     //h3.textContent = "correct";
@@ -72,7 +72,7 @@ function initApp(){
            btnSubmit.textContent = "Please Wait!";
             
             //4. Reset text to an empty string inside <tbody>
-           tbody.textContent = "";
+            tbody.innerHTML = "";
             
             
             //5. Reset header to default text
@@ -100,8 +100,14 @@ function initApp(){
                     // Fastest loop: for(...)
                     for (var i = 0; i < data.section.signing.length; i++){
                         //trows += data.section.signing[i].author;
+                        trows += "<tr><td>";
+                        trows += data.section.signing[i].author.title + " " + data.section.signing[i].author.name;
+                        trows += "</td><td>";
+                        trows += data.section.signing[i].book.title;
+                        trows += "</td><td>";
+                        trows += data.section.signing[i].book.price;
+                        trows += "</td></tr>";;
                     }
-                    //tbody.textContent = trows;
                     
                     
                } // This ends the "if (data.section)".
@@ -116,6 +122,7 @@ function initApp(){
                 
             }
             //10. Display rows data to the table
+            tbody.innerHTML = trows;
             
             //11. Change button text to concatenate "Re-" to the existing text to display "Re-Load Data". Similar to Ex 9.1
             
