@@ -47,9 +47,7 @@ function initApp(){
 
     //1. Cache tbody, h3 & h3 text selectors: See Ex 9.1
     var tbody = document.querySelector(".pure-table").lastElementChild;
-    //tbody.textContent = "t"
     var h3 = document.querySelector("h3");
-    //h3.textContent = "correct";
 
 
     var url = "https://babanski.com/files/ajax/book_signing_event.json";
@@ -60,10 +58,7 @@ function initApp(){
     // Create function triggered by each state change event 
     xhr.onreadystatechange = function (evt) { 
          //2. Create variable to store all the rows data for <tbody> & initialize it to an empty string. 
-         var trows = ""
-         
-         //tbody.textContent = "called"
-         //btnSubmit.textContent = "yes"
+         var trows = "";
 
         //If server connection established -> ready state = OPENED
         if (this.readyState == XMLHttpRequest.OPENED) {
